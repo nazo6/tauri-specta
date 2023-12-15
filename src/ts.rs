@@ -1,3 +1,4 @@
+use crate::tauri::Runtime;
 use crate::{js_ts, *};
 use heck::ToLowerCamelCase;
 use indoc::formatdoc;
@@ -7,7 +8,6 @@ use specta::{
     ts::{self, ExportError},
     TypeMap,
 };
-use tauri::Runtime;
 
 /// Implements [`ExportLanguage`] for TypeScript exporting
 pub struct Language;

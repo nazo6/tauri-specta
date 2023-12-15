@@ -1,8 +1,8 @@
+use crate::tauri::Runtime;
 use crate::*;
 use heck::ToLowerCamelCase;
 use indoc::formatdoc;
 use specta::{functions::FunctionDataType, js_doc, ts};
-use tauri::Runtime;
 
 /// Implements [`ExportLanguage`] for JS exporting
 pub struct Language;

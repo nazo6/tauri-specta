@@ -3,9 +3,9 @@ use std::{
     sync::RwLock,
 };
 
+use crate::tauri::{self, EventHandler, Manager, Runtime, Window};
 use serde::{de::DeserializeOwned, Serialize};
 use specta::{DataType, NamedType, SpectaID};
-use tauri::{EventHandler, Manager, Runtime, Window};
 
 use crate::PluginName;
 

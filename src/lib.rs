@@ -127,7 +127,7 @@ use specta::{
     NamedDataType, SpectaID, TypeMap,
 };
 
-use tauri::{Invoke, Manager, Runtime};
+use crate::tauri::{Invoke, Manager, Runtime};
 pub use tauri_specta_macros::Event;
 
 /// The exporter for [Javascript](https://www.javascript.com).
@@ -522,3 +522,15 @@ impl<TConfig: Default> ExportConfig<TConfig> {
         }
     }
 }
+
+#[cfg(not(any(feature = "tauri", feature = "tauri2-alpha18")))]
+compile_error!("You must enable the `tauri` or `tauri2-alpha18` feature to use this crate");
+
+#[cfg(all(feature = "tauri", feature = "tauri2-alpha18"))]
+compile_error!("You can only enable one of `tauri` or `tauri2-alpha18` features at a time");
+
+#[cfg(feature = "tauri")]
+pub(crate) use tauri;
+
+#[cfg(feature = "tauri2-alpha18")]
+pub(crate) use tauri2_alpha18 as tauri;
