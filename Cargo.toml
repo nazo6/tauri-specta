@@ -43,7 +43,7 @@ members = [
 ]
 
 [workspace.dependencies]
-specta = { git = "https://github.com/oscartbeaumont/specta", rev = "673e3f55d246cd90e70c706ba4ca7f5818e99ba9" }
+specta = { git = "https://github.com/nazo6/specta", branch = "tauri2-alpha18" }
 serde = "1.0.188"
 tauri = "2.0.0-alpha"
 tauri-build = "2.0.0-alpha"
